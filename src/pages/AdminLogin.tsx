@@ -29,6 +29,7 @@ const AdminLogin = () => {
         email,
         options: {
           shouldCreateUser: true,
+          emailRedirectTo: window.location.origin + "/brand-admin/dashboard"
         },
       });
 
@@ -111,8 +112,10 @@ const AdminLogin = () => {
                 <KeyRound className="h-6 w-6 text-white" />
               </div>
               <h1 className="text-2xl font-bold tracking-tight">Admin System</h1>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {step === "email" ? "Enter your email to receive a secure code." : "Enter the 6-digit code sent to your email."}
+              <p className="mt-2 text-sm text-muted-foreground px-4">
+                {step === "email" 
+                  ? "Enter your email to receive a secure login link and code." 
+                  : "Click the magic link in your email or enter the 6-digit code below."}
               </p>
             </div>
 
